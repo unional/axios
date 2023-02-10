@@ -26,7 +26,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/npm/axios/badge.svg)](https://snyk.io/test/npm/axios)
 
 
-
+This is a fork for gap release. Please use `axios` directly if you can.
 
 </div>
 
@@ -1188,7 +1188,7 @@ Sending `Blobs`/`Files` as JSON (`base64`) is not currently supported.
 
 Axios supports both browser and node environments to capture request upload/download progress.
 
-```js    
+```js
 await axios.post(url, data, {
   onUploadProgress: function (axiosProgressEvent) {
     /*{
@@ -1207,13 +1207,13 @@ await axios.post(url, data, {
       loaded: number;
       total?: number;
       progress?: number;
-      bytes: number; 
+      bytes: number;
       estimated?: number;
       rate?: number; // download speed in bytes
       download: true; // download sign
     }*/
   }
-});  
+});
 ```
 
 You can also track stream upload/download progress in node.js:
@@ -1223,7 +1223,7 @@ const {data} = await axios.post(SERVER_URL, readableStream, {
    onUploadProgress: ({progress}) => {
      console.log((progress * 100).toFixed(2));
    },
-  
+
    headers: {
     'Content-Length': contentLength
    },
@@ -1249,7 +1249,7 @@ const {data} = await axios.post(LOCAL_SERVER_URL, myBuffer, {
   onUploadProgress: ({progress, rate}) => {
     console.log(`Upload [${(progress*100).toFixed(2)}%]: ${(rate / 1024).toFixed(2)}KB/s`)
   },
-   
+
   maxRate: [100 * 1024], // 100KB/s limit
 });
 ```
